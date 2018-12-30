@@ -1,0 +1,57 @@
+{
+  "name": "bacstack",
+  "version": "0.0.1-beta.13",
+  "description": "A BACnet protocol stack written in pure JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "changelog": "commitlint --from=master",
+    "lint": "jshint lib/ test/ index.js && jscs lib/ test/ index.js",
+    "test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha -- test/unit/*.spec.js",
+    "integration": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha -- test/integration/*.spec.js",
+    "compliance": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha -- test/compliance/*.spec.js",
+    "docs": "jsdoc -d ./docs -t node_modules/docdash ./lib ./index.js ./README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fh1ch/node-bacstack.git"
+  },
+  "keywords": [
+    "bacnet",
+    "bacstack",
+    "building",
+    "automation"
+  ],
+  "author": {
+    "name": "Fabio Huser",
+    "email": "fabio@fh1.ch"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fh1ch/node-bacstack/issues"
+  },
+  "homepage": "https://github.com/fh1ch/node-bacstack#readme",
+  "dependencies": {
+    "debug": "^4.0.1",
+    "iconv-lite": "^0.4.24"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@commitlint/travis-cli": "^7.1.2",
+    "chai": "^4.1.2",
+    "docdash": "^1.0.0",
+    "istanbul": "^0.4.5",
+    "jscs": "^3.0.7",
+    "jsdoc": "^3.5.5",
+    "jshint": "^2.9.5",
+    "mocha": "^5.0.5"
+  }
+}
